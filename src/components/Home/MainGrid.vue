@@ -14,7 +14,6 @@
 
 <style scoped lang="scss">
 #main-grid {
-  --width: 190px;
   --height: 150px;
   display: grid;
 
@@ -25,7 +24,7 @@
     'cim ms ms ms fi1 o'
     'cim ms ms ms fi2 o';
 
-  grid-template-columns: repeat(6, var(--width));
+  grid-template-columns: repeat(6, auto);
   grid-template-rows: repeat(3, var(--height));
 }
 </style>
