@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ChannelGrid from '@/components/Home/ChannelGrid.vue';
 import HomeHeader from '@/components/Home/HomeHeader.vue';
 import MainGrid from '@/components/Home/MainGrid.vue';
 import MiaoShaGrid from '@/components/Home/MiaoShaGrid.vue';
@@ -17,6 +18,10 @@ import SpecGrid from '@/components/Home/SpecGrid.vue';
     </div>
     <div class="pt-3 m-auto">
       <SpecGrid />
+    </div>
+    <h1 class="text-center my-8 font-bold text-3xl"> -- 频道广场 -- </h1>
+    <div class="m-auto">
+      <ChannelGrid />
     </div>
   </main>
 </template>
