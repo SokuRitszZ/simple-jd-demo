@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import randomPic from '@/utils/randomPic';
 import ChannelBlock from './Channel/ChannelBlock.vue';
 
 type typeChannel = {
@@ -22,10 +23,19 @@ const channels: typeChannel[] = [
     id="container"
     class="grid grid-rows-3 grid-cols-4 h-[600px] w-full gap-2"
   >
-    <div class="row-span-2 col-span-1"></div>
-    <div class="row-span-2 col-span-1"></div>
+    <div class="row-span-2 col-span-1">
+      <img :src="randomPic()" alt="channel" class="w-full h-full">
+    </div>
+    <div class="row-span-2 col-span-1">
+      <img :src="randomPic()" alt="channel" class="w-full h-full">
+    </div>
     <!-- div*8 -->
-    <ChannelBlock :key="c.title" v-for="c in channels" :title="c.title" :description="c.description"></ChannelBlock>
+    <ChannelBlock :key="c.title" v-for="c in channels" :title="c.title" :description="c.description">
+      <div class="w-full h-full flex justify-between gap-2">
+        <img :src="randomPic()" alt="item0" class="w-[120px] h-[120px]">
+        <img :src="randomPic()" alt="item1" class="w-[120px] h-[120px]">
+      </div>
+    </ChannelBlock>
   </div>
 </template>
 

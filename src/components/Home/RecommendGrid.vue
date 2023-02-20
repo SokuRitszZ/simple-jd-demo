@@ -3,6 +3,7 @@ import NavBar from './Recommend/NavBar.vue';
 // @ts-ignore
 import faker from 'faker';
 import { ref } from 'vue';
+import randomPic from '@/utils/randomPic';
 
 type typeItem = {
   pic: string;
@@ -15,7 +16,8 @@ const items = ref<typeItem[]>([]);
 function getItems(option: string) {
   console.log(option);
   items.value = new Array(100).fill(0).map(() => ({
-    pic: 'https://sdfsdf.dev/100x100.png',
+    pic: randomPic(),
+    // pic: 'https://sdfsdf.dev/100x100.png',
     description: faker.lorem.paragraph(),
     price: +(Math.random() * 1000).toFixed(2),
   }));
@@ -30,7 +32,7 @@ function getItems(option: string) {
     </div>
     <div class="grid grid-cols-5 gap-2">
       <div :key="i" v-for="(it, i) of items" class="bg-white h-[322px] p-5">
-        <img :src="it.pic" alt="item-img" class="w-full" />
+        <img :src="it.pic" alt="item-img" class="w-[160px] h-[200px] m-auto" />
         <div
           class="overflow-hidden text-ellipsis h-[40px] text-sm mt-1 text-[#666666]"
         >
