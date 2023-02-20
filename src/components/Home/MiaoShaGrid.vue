@@ -7,7 +7,7 @@ import randomPic from '@/utils/randomPic';
 </script>
 
 <template>
-  <div id="miaosha-grid" class="w-full grid h-[260px] mb-4">
+  <div id="miaosha-grid" class="w-full grid h-[260px]">
     <MiaoshaTimer />
     <MoveSlider />
     <div id="seckill-brand" class="bg-white col-span-1 p-7 bg-gradient-to-t from-blue-200 to-white">

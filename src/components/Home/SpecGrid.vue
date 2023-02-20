@@ -5,7 +5,7 @@ import Core2Container from './Spec/Core2Container.vue';
 </script>
 
 <template>
-  <div id="spec" class="w-full">
+  <div id="spec" class="w-full pt-7">
     <div id="core1" class="grid grid-cols-2 h-[340px] gap-2">
       <TejiaGrid />
       <ShangouGrid />

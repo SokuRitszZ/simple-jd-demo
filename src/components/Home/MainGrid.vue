@@ -19,7 +19,7 @@ import MainSlider from './Main/MainSlider.vue';
         <MainSlider />
       </div>
     </div>
-    <div class="px-1 overflow-hidden" style="grid-area: ti">
+    <div class="px-1 overflow-hidden -z-10" style="grid-area: ti">
       <ThreeItems />
     </div>
     <div id="other" style="grid-area: o" class="bg-white"></div>
