@@ -1,31 +1,12 @@
 <script setup lang="ts">
-const hotWords = [
-  'Karianne',
-  'Travis',
-  'Leanne',
-  'Brandon',
-  'Gussie',
-  'Ernesto',
-  'Porter',
-  'Shanie',
-];
-const navItems = [
-  'Michael',
-  'Aliya',
-  'Mckayla',
-  'Elizabeth',
-  'Queen',
-  'Antonina',
-  'Sofia',
-  'Judy',
-];
+// @ts-ignore
+import faker from 'faker';
+const hotWords = new Array(8).fill(0).map(() => faker.name.firstName());
+const navItems = new Array(8).fill(0).map(() => faker.name.firstName());
 </script>
 
 <template>
-  <header
-    id="home-header"
-    class="bg-white border-b-[1px]"
-  >
+  <header id="home-header" class="bg-white border-b-[1px]">
     <div class="w-[1200px] m-auto flex justify-center items-center gap-10">
       <div id="logo" class="w-[120px] h-[120px] bg-[#E21D17]"></div>
       <div id="header-middle">
@@ -41,10 +22,22 @@ const navItems = [
             >图</span
           >
           <button
-            class="bg-[#E1251B] border-[#E1251B] border-2 font-bold text-white px-3 py-2 text-center text-sm min-w-[60px]"
+            class="bg-[#E1251B] border-[#E1251B] border-2 font-bold text-white px-3 py-2 text-center text-sm min-w-[60px] hover:bg-[#C81623] transition-colors"
           >
             搜
           </button>
+          <div class="relative">
+            <button
+              class="cart-btn ml-5 text-sm border-[1px] border-gray-100 px-4 py-2 text-[#E33128] hover:ring-1 ring-[#E33128] flex justify-between items-center gap-4"
+            >
+              <div class="rounded-full bg-[#a11200] p-3"></div>
+              我的购物车
+              <div class="bg-[#E1251B] text-white px-2 text-[12px] rounded-full absolute left-12 top-2">0</div>
+              <div
+                class="cart-list absolute w-[300px] h-[200px] right-0 top-10 hidden"
+              ></div>
+            </button>
+          </div>
         </div>
         <div id="hot-words" class="flex gap-3 text-sm pt-1">
           <span
@@ -70,4 +63,8 @@ const navItems = [
   </header>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.cart-btn:hover .cart-list {
+  @apply block bg-white border-[1px] border-[#E33128];
+}
+</style>
