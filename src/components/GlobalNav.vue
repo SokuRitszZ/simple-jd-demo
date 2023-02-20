@@ -11,7 +11,7 @@ function getSubOptions() {
 </script>
 
 <template>
-  <nav id="home-nav">
+  <nav id="home-nav" class="min-w-[1200px]">
     <div class="bg-[#E3E4E5]">
       <div class="w-[1200px] m-auto flex justify-between text-sm">
         <div

@@ -6,7 +6,7 @@ const navItems = new Array(8).fill(0).map(() => faker.name.firstName());
 </script>
 
 <template>
-  <header id="home-header" class="bg-white border-b-[1px]">
+  <header id="home-header" class="bg-white border-b-[1px] min-w-[1200px]">
     <div class="w-[1200px] m-auto flex justify-center items-center gap-10">
       <div id="logo" class="w-[120px] h-[120px] bg-[#E21D17]"></div>
       <div id="header-middle">
