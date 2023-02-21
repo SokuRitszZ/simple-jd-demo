@@ -21,7 +21,7 @@ function allDo(method: string) {
         <PicSlider ref="slidersSub" :urls="urls" />
       </div>
     </div>
-    <div class="absolute w-full h-full flex justify-between items-center px-2 z-50">
+    <div class="absolute w-full h-full flex justify-between items-center px-2 z-10">
       <div @click="() => allDo('prev')" class="circle-btn w-[30px] h-[30px]"></div>
       <div @click="() => allDo('next')" class="circle-btn w-[30px] h-[30px]"></div>
     </div>
