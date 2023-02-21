@@ -26,7 +26,8 @@ const brands = ref<typeBrand[]>(
 <template>
   <div id="tejia" class="bg-white p-5 flex flex-col">
     <div class="flex items-center h-[60px]">
-      <h1 class="text-3xl font-bold">品牌闪购</h1>
+      <a href="#" class="text-3xl font-bold">品牌闪购</a>
+      <div class="w-[30px] h-[30px] border-2 border-[#C81623] rounded-full transition relative left-8"></div>
     </div>
     <div id="the-grid" class="grid grid-rows-3 grid-cols-4 w-full grow">
       <a
@@ -63,5 +64,9 @@ const brands = ref<typeBrand[]>(
     'ms ms i2 i3'
     'ms ms i4 i5'
     'ms ms i6 i7';
+}
+
+a:hover+div {
+  @apply bg-[#C81623];
 }
 </style>
