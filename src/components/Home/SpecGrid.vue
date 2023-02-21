@@ -9,6 +9,7 @@ import randomPic from '@/utils/randomPic';
 import faker from 'faker';
 import JoySeek from './Spec/JoySeek.vue';
 import GoodShop from './Spec/GoodShop.vue';
+import CouponList from './Spec/CouponList.vue';
 
 type typeItem = {
   id: number;
@@ -59,7 +60,9 @@ const $sliderScale = ref();
       <Core2Container title="逛好店">
         <GoodShop />
       </Core2Container>
-      <Core2Container title="领券中心"></Core2Container>
+      <Core2Container title="领券中心">
+        <CouponList />
+      </Core2Container>
     </div>
   </div>
 </template>
