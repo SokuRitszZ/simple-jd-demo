@@ -16,12 +16,12 @@ function allDo(method: string) {
 
 <template>
   <div class="w-[190px] h-full overflow-hidden m-0 relative">
-    <div class="shader flex flex-col gap-3">
+    <div class="shader flex flex-col gap-3 -z-10">
       <div class="relative w-[190px] h-[136px]" v-for="(urls, i) of items" :key="i">
         <PicSlider ref="slidersSub" :urls="urls" />
       </div>
     </div>
-    <div class="absolute w-full h-full flex justify-between items-center px-2 z-20">
+    <div class="absolute w-full h-full flex justify-between items-center px-2 z-50">
       <div @click="() => allDo('prev')" class="circle-btn w-[30px] h-[30px]"></div>
       <div @click="() => allDo('next')" class="circle-btn w-[30px] h-[30px]"></div>
     </div>
