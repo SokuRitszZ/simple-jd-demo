@@ -1,18 +1,26 @@
 <script setup lang="ts">
 import randomPic from '@/utils/randomPic';
 import { ref } from 'vue';
+// @ts-ignore
+import faker from 'faker';
 
 type typeItem = {
   id: number;
   pic: string;
+  title: string;
+  price: number;
 };
 
-const itemSpec = ref<typeItem[]>(new Array(4).fill(0).map(() => {
-  return {
-    id: Math.random() * 10000 >>> 0,
-    pic: randomPic(),
-  };
-}));
+const itemSpec = ref<typeItem[]>(
+  new Array(4).fill(0).map(() => {
+    return {
+      id: (Math.random() * 10000) >>> 0,
+      pic: randomPic(),
+      title: faker.lorem.sentence(2),
+      price: +(Math.random() * 1000).toFixed(2),
+    };
+  })
+);
 </script>
 
 <template>
@@ -27,21 +35,58 @@ const itemSpec = ref<typeItem[]>(new Array(4).fill(0).map(() => {
       <div
         style="grid-area: ms"
         alt=""
-        class="max-h-[240px] min-h-[240px]"
+        class="max-h-[240px] min-h-[240px] pt-4 bg-gray-100"
       >
-        <img :src="randomPic()" class="w-full h-full p-1" alt="">
+        <img
+          :src="randomPic()"
+          class="w-[120px] h-[120px] m-auto"
+          alt="main-spec-item"
+        />
+        <div class="text-center pt-5">{{ faker.lorem.sentence(2) }}</div>
+        <div class="text-center pt-2 text-[#E1251B]">
+          <span class="text-sm"> ￥ </span>
+          <span class="font-bold">
+            {{ (Math.random() * 1000).toFixed(2) }}
+          </span>
+        </div>
       </div>
-      <div :style="`grid-area: x${i + 1}`" :key="it.id " v-for="(it, i) of itemSpec" :src="it.pic" alt="" class="max-w-[185px] max-h-[120px] p-1">
-        <img class="w-full h-full" :src="it.pic" alt="">
-      </div>
+      <a
+        :style="`grid-area: x${i + 1}`"
+        :key="it.id"
+        v-for="(it, i) of itemSpec"
+        :src="it.pic"
+        alt=""
+        class="max-w-[185px] max-h-[120px] flex justify-center items-center gap-2 text-sm other-item"
+        href="#"
+      >
+        <img id="img" class="w-[60px] h-[60px]" :src="it.pic" alt="" />
+        <div class="w-[100px]">
+          <div id="title">{{ it.title }}</div>
+          <div id="price" class="text-[#E1251B] font-bold">
+            ￥{{ it.price }}
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 #the-grid {
-  grid-template-areas: 
-    "ms x1 x2"
-    "ms x3 x4";
+  grid-template-areas:
+    'ms x1 x2'
+    'ms x3 x4';
+}
+
+.other-item * {
+  transition: .2s;
+}
+
+.other-item:hover {
+  @apply text-[#E1251B];
+  
+  #img {
+    opacity: .7
+  }
 }
 </style>
