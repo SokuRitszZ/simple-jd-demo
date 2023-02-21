@@ -35,7 +35,7 @@ const itemSpec = ref<typeItem[]>(
       <div
         style="grid-area: ms"
         alt=""
-        class="max-h-[240px] min-h-[240px] pt-4 bg-gray-100"
+        class="max-h-[240px] min-h-[240px] pt-4 bg-gradient-to-t from-gray-100 to-white"
       >
         <img
           :src="randomPic()"
