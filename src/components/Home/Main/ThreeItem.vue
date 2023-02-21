@@ -16,15 +16,23 @@ function allDo(method: string) {
 
 <template>
   <div class="w-[190px] h-full overflow-hidden m-0 relative">
-    <div class="shader flex flex-col gap-3 -z-10">
-      <div class="relative w-[190px] h-[136px]" v-for="(urls, i) of items" :key="i">
+    <div class="shader flex flex-col gap-3 ">
+      <div
+        class="relative w-[190px] h-[136px]"
+        v-for="(urls, i) of items"
+        :key="i"
+      >
         <PicSlider ref="slidersSub" :urls="urls" />
       </div>
     </div>
-    <div class="absolute w-full h-full flex justify-between items-center px-2 z-10">
-      <div @click="() => allDo('prev')" class="circle-btn w-[30px] h-[30px]"></div>
-      <div @click="() => allDo('next')" class="circle-btn w-[30px] h-[30px]"></div>
-    </div>
+    <button
+      @click="() => allDo('prev')"
+      class="circle-btn w-[30px] h-[30px] absolute left-2 top-1/2 -translate-y-1/2 z-10"
+    ></button>
+    <button
+      @click="() => allDo('next')"
+      class="circle-btn w-[30px] h-[30px] absolute right-2 top-1/2 -translate-y-1/2 z-10"
+    ></button>
   </div>
 </template>
 
@@ -46,10 +54,12 @@ img:hover + div {
     display: none;
     opacity: 0;
   }
+
   50% {
     display: none;
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

@@ -66,10 +66,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full h-full relative">
+  <a href="#" class="w-full h-full relative block">
     <img class="absolute left-0 top-0 w-full h-full z-10" ref="$img" :src="props.urls[ptr]" alt="new" />
     <img class="absolute left-0 top-0 w-full h-full z-0" ref="$imgOld" :src="props.urls[ptrOld]" alt="old" />
-  </div>
+  </a>
 </template>
 
 <style lang="scss">

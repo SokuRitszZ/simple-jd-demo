@@ -61,7 +61,8 @@ function moveRight() {
       ref="$sliderMove"
       class="w-[800px] flex flex-nowrap -translate-x-[800px]"
     >
-      <div
+      <a
+        href="#"
         :key="i.title"
         v-for="i in items"
         :class="[
@@ -80,14 +81,10 @@ function moveRight() {
         <div class="text-sm font-bold pt-3 text-[#E1251B]">
           ￥{{ i.price.toFixed(2) }}
         </div>
-      </div>
+      </a>
     </div>
-    <div
-      class="absolute w-full h-full left-0 top-0 flex justify-between items-center px-2"
-    >
-      <button @click="moveRight" class="circle-btn w-[30px] h-[30px]"></button>
-      <button @click="moveLeft" class="circle-btn w-[30px] h-[30px]"></button>
-    </div>
+    <button @click="moveRight" class="circle-btn w-[30px] h-[30px] absolute left-2 top-1/2 -translate-y-1/2"></button>
+    <button @click="moveLeft" class="circle-btn w-[30px] h-[30px] absolute right-2 top-1/2 -translate-y-1/2"></button>
   </div>
 </template>
 

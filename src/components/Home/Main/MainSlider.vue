@@ -13,20 +13,16 @@ const ptrSliderMain = ref<number>(0);
 
 <template>
   <PicSlider v-model="ptrSliderMain" ref="$sliderMain" :urls="urls" />
-  <div
-    class="absolute top-0 left-0 z-20 flex justify-between items-center w-full h-full px-2"
-  >
     <button
       @click="() => $sliderMain.prev()"
-      class="circle-btn w-[50px] h-[50px]"
+      class="absolute left-2 top-1/2 -translate-y-1/2 circle-btn w-[50px] h-[50px] z-10"
     ></button>
     <button
       @click="() => $sliderMain.next()"
-      class="circle-btn w-[50px] h-[50px]"
+      class="absolute right-2 top-1/2 -translate-y-1/2 circle-btn w-[50px] h-[50px] z-10"
     ></button>
-  </div>
-  <div class="absolute flex gap-1 bottom-[30px] left-[30px] z-20">
-    <button
+    <div class="absolute bottom-9 left-9 z-10 flex gap-1">
+      <button
       @click="() => $sliderMain.jump(i)"
       :class="[
         'circle-btn w-[10px] h-[10px] transition',
@@ -34,8 +30,8 @@ const ptrSliderMain = ref<number>(0);
       ]"
       :key="i"
       v-for="(_, i) of urls.length"
-    />
-  </div>
+      />
+    </div>
 </template>
 
 <style scoped lang="scss"></style>

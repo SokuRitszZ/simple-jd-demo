@@ -32,20 +32,21 @@ const props = defineProps<PropsType>();
   <div class="w-full h-full flex">
     <div class="w-[600px]">
       <nav class="flex gap-2">
-        <div
+        <a
+          href="#"
           :key="o"
           v-for="o in optionsTop"
-          class="bg-black text-white px-2 py-1 hover:bg-[#C81623] cursor-pointer"
+          class="bg-black text-white px-2 py-1 hover:bg-[#C81623]"
         >
           {{ o }}
-        </div>
+        </a>
       </nav>
       <div class="w-full grid grid-cols-9 gap-4 pt-5" :key="om.title" v-for="om of optionsMap">
-        <div class="col-span-2 text-right font-bold cursor-pointer hover:text-[#C81623]">
+        <a href="#" class="col-span-2 text-right font-bold hover:text-[#C81623]">
           {{ om.title }}
-        </div>
+        </a>
         <div class="col-span-7 flex gap-2 flex-wrap text-[#666666]">
-          <div :key="o" v-for="o in om.options" class="hover:text-[#C81623] cursor-pointer">{{ o }}</div>
+          <a href="#" :key="o" v-for="o in om.options" class="hover:text-[#C81623]">{{ o }}</a>
         </div>
       </div>
     </div>

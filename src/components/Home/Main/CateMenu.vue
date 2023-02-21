@@ -17,7 +17,7 @@ const keywords = new Array(15).fill(0).map(() => {
     >
       <span :key="i" v-for="(w, i) of ws">
         <span v-if="i" class="px-1">/</span>
-        <span class="hover:text-[#C81623] cursor-pointer">{{ w }}</span>
+        <a href="#" class="hover:text-[#C81623]">{{ w }}</a>
       </span>
       <div
         class="board absolute z-50 left-full top-0 bg-white border-[1px] border-gray-100 p-4 min-w-[800px] shadow-lg hidden"

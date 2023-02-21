@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 
 type typeOption = {
   title: string;
@@ -14,18 +16,25 @@ const options: typeOption[] = [
 ];
 
 const emit = defineEmits(['changeOption']);
+const $nav = ref<HTMLDivElement>();
 
+function select(option: string) {
+  window.scrollTo({
+    top: $nav.value?.offsetTop,
+  });
+  emit('changeOption', option);
+}
 </script>
 
 <template>
-  <div class="bg-white flex justify-center items-center py-1 gap-2 text-center">
+  <div ref="$nav" class="bg-white flex justify-center items-center py-1 gap-2 text-center">
     <label
       name="option"
       :for="o.title"
       class="link"
       :key="o.title"
       v-for="o in options"
-      @click="emit('changeOption', o.title)"
+      @click="select(o.title)"
     >
       <input
         name="option"

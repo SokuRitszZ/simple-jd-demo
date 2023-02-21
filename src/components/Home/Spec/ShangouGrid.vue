@@ -41,10 +41,10 @@ const brands = ref<typeBrand[]>(
         </div>
         <img class="w-[140px] h-[140px] max-h-[240px] m-auto pt-4" :src="randomPic()" alt="">
       </a>
-      <div :key="i" :style="`grid-area: i${i}`" v-for="(b, i) of brands">
+      <a href="#" :key="i" :style="`grid-area: i${i}`" v-for="(b, i) of brands">
         <img class="w-3/4 h-2/3 m-auto" :src="b.pic" alt="">
         <div class="text-center">{{ b.title }}</div>
-      </div>
+      </a>
     </div>
   </div>
 </template>

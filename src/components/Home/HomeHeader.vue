@@ -40,18 +40,20 @@ const navItems = new Array(8).fill(0).map(() => faker.name.firstName());
           </div>
         </div>
         <div id="hot-words" class="flex gap-3 text-sm pt-1">
-          <span
+          <a
+            href="#"
             :class="[
               i ? 'text-[#B4B4B4]' : 'text-[#E1251B]',
               'hover:text-[#C81623] cursor-pointer',
             ]"
             :key="w"
             v-for="(w, i) in hotWords"
-            >{{ w }}</span
+            >{{ w }}</a
           >
         </div>
         <div id="nav-items" class="pt-6">
           <a
+            href="#"
             class="cursor-pointer transition-colors hover:text-[#D6515B] mx-3 leading-[40px]"
             :key="n"
             v-for="n in navItems"
