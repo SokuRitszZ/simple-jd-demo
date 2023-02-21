@@ -1,6 +1,6 @@
 <script setup lang="ts">
 type PropsType = {
-  title: string,
+  title: string;
 };
 const props = defineProps<PropsType>();
 </script>

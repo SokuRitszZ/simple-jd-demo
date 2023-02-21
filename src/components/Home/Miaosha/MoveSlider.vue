@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 // @ts-ignore
-import faker from "faker";
+import faker from 'faker';
 import randomPic from '@/utils/randomPic';
 
 type typeItem = {
@@ -11,20 +11,22 @@ type typeItem = {
   img: string;
 };
 
-const items = ref<typeItem[]>(new Array(12).fill(0).map(() => {
-  return {
-    id: (Math.random() * 100) >>> 0,
-    title: faker.lorem.sentence(),
-    price: Math.random() * 1000,
-    img: randomPic(),
-  };
-}));
+const items = ref<typeItem[]>(
+  new Array(12).fill(0).map(() => {
+    return {
+      id: (Math.random() * 100) >>> 0,
+      title: faker.lorem.sentence(),
+      price: Math.random() * 1000,
+      img: randomPic(),
+    };
+  })
+);
 
 const $sliderMove = ref<HTMLDivElement>();
 const timer = ref<any>();
 
 function moveLeft() {
-  if (timer.value) return ;
+  if (timer.value) return;
   const is = items.value;
   if (!$sliderMove.value) return;
   $sliderMove.value.classList.add('animate');
@@ -38,7 +40,7 @@ function moveLeft() {
 }
 
 function moveRight() {
-  if (timer.value) return ;
+  if (timer.value) return;
   const is = items.value;
   if (!$sliderMove.value) return;
   $sliderMove.value.classList.add('animate');
@@ -83,8 +85,14 @@ function moveRight() {
         </div>
       </a>
     </div>
-    <button @click="moveRight" class="circle-btn w-[30px] h-[30px] absolute left-2 top-1/2 -translate-y-1/2"></button>
-    <button @click="moveLeft" class="circle-btn w-[30px] h-[30px] absolute right-2 top-1/2 -translate-y-1/2"></button>
+    <button
+      @click="moveRight"
+      class="circle-btn w-[30px] h-[30px] absolute left-2 top-1/2 -translate-y-1/2"
+    ></button>
+    <button
+      @click="moveLeft"
+      class="circle-btn w-[30px] h-[30px] absolute right-2 top-1/2 -translate-y-1/2"
+    ></button>
   </div>
 </template>
 

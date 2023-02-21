@@ -22,7 +22,6 @@ function getItems(option: string) {
     price: +(Math.random() * 1000).toFixed(2),
   }));
 }
-
 </script>
 
 <template>

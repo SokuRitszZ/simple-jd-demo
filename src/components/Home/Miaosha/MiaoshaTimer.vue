@@ -39,11 +39,7 @@ onMounted(() => {
       <span class="font-normal text-sm">点场 距结束</span>
     </h1>
     <h1 class="pt-3 flex justify-center gap-1">
-      <div
-        :key="i"
-        v-for="(t, i) in timeCurrent"
-        class="timer"
-      >
+      <div :key="i" v-for="(t, i) in timeCurrent" class="timer">
         <span class="bg-[#2F3430] p-1 text-lg">
           {{ zeroPad(2, t) }}
         </span>
@@ -54,7 +50,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .timer:not(:last-child):after {
-  content: ":";
+  content: ':';
   width: 100px;
   height: 100px;
   @apply ml-1;

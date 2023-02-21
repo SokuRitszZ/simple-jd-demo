@@ -16,7 +16,7 @@ function allDo(method: string) {
 
 <template>
   <div class="w-[190px] h-full overflow-hidden m-0 relative">
-    <div class="shader flex flex-col gap-3 ">
+    <div class="shader flex flex-col gap-3">
       <div
         class="relative w-[190px] h-[136px]"
         v-for="(urls, i) of items"

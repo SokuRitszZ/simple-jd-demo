@@ -32,7 +32,11 @@ const navItems = new Array(8).fill(0).map(() => faker.name.firstName());
             >
               <div class="rounded-full bg-[#a11200] p-3"></div>
               我的购物车
-              <div class="bg-[#E1251B] text-white px-2 text-[12px] rounded-full absolute left-12 top-2">0</div>
+              <div
+                class="bg-[#E1251B] text-white px-2 text-[12px] rounded-full absolute left-12 top-2"
+              >
+                0
+              </div>
               <div
                 class="cart-list absolute w-[300px] h-[200px] right-0 top-10 hidden z-50"
               ></div>

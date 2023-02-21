@@ -10,12 +10,14 @@ type typeOptions = {
 };
 
 const optionsTop = ref<string[]>([]);
-const optionsMap = ref<typeOptions[]>(new Array(10).fill(0).map(() => {
-  return {
-    title: faker.lorem.word(),
-    options: new Array(10).fill(0).map(() => faker.lorem.word()),
-  }
-}));
+const optionsMap = ref<typeOptions[]>(
+  new Array(10).fill(0).map(() => {
+    return {
+      title: faker.lorem.word(),
+      options: new Array(10).fill(0).map(() => faker.lorem.word()),
+    };
+  })
+);
 
 type PropsType = {
   keyword: string;
@@ -41,12 +43,25 @@ const props = defineProps<PropsType>();
           {{ o }}
         </a>
       </nav>
-      <div class="w-full grid grid-cols-9 gap-4 pt-5" :key="om.title" v-for="om of optionsMap">
-        <a href="#" class="col-span-2 text-right font-bold hover:text-[#C81623]">
+      <div
+        class="w-full grid grid-cols-9 gap-4 pt-5"
+        :key="om.title"
+        v-for="om of optionsMap"
+      >
+        <a
+          href="#"
+          class="col-span-2 text-right font-bold hover:text-[#C81623]"
+        >
           {{ om.title }}
         </a>
         <div class="col-span-7 flex gap-2 flex-wrap text-[#666666]">
-          <a href="#" :key="o" v-for="o in om.options" class="hover:text-[#C81623]">{{ o }}</a>
+          <a
+            href="#"
+            :key="o"
+            v-for="o in om.options"
+            class="hover:text-[#C81623]"
+            >{{ o }}</a
+          >
         </div>
       </div>
     </div>

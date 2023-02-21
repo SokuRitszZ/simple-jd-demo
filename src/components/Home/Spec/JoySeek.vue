@@ -2,7 +2,7 @@
 import randomPic from '@/utils/randomPic';
 import { ref } from 'vue';
 // @ts-ignore
-import faker from "faker";
+import faker from 'faker';
 
 type typeItem = {
   id: number;

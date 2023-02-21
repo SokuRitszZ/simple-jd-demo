@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-
 type typeOption = {
   title: string;
   description: string;
@@ -27,7 +26,10 @@ function select(option: string) {
 </script>
 
 <template>
-  <div ref="$nav" class="bg-white flex justify-center items-center py-1 gap-2 text-center">
+  <div
+    ref="$nav"
+    class="bg-white flex justify-center items-center py-1 gap-2 text-center"
+  >
     <label
       name="option"
       :for="o.title"
@@ -36,12 +38,7 @@ function select(option: string) {
       v-for="o in options"
       @click="select(o.title)"
     >
-      <input
-        name="option"
-        :id="o.title"
-        type="radio"
-        class="hidden"
-      />
+      <input name="option" :id="o.title" type="radio" class="hidden" />
       <div class="title">{{ o.title }}</div>
       <div class="description">{{ o.description }}</div>
     </label>

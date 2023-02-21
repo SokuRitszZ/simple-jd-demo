@@ -79,14 +79,14 @@ const itemSpec = ref<typeItem[]>(
 }
 
 .other-item * {
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .other-item:hover {
   @apply text-[#E1251B];
-  
+
   #img {
-    opacity: .7
+    opacity: 0.7;
   }
 }
 </style>

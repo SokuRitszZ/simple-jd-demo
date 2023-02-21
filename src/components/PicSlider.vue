@@ -6,16 +6,19 @@ type PropsType = {
   modelValue?: number;
 };
 
-const emit = defineEmits([ 'update:modelValue' ]);
+const emit = defineEmits(['update:modelValue']);
 
 const ptr = ref<number>(0);
-watch(() => props.modelValue, newV => {
-  if (!newV) return ;
-  ptr.value = newV;
-  emit('update:modelValue', newV);
-});
+watch(
+  () => props.modelValue,
+  (newV) => {
+    if (!newV) return;
+    ptr.value = newV;
+    emit('update:modelValue', newV);
+  }
+);
 
-watch(ptr, newV => {
+watch(ptr, (newV) => {
   emit('update:modelValue', newV);
 });
 
@@ -34,9 +37,9 @@ function prev() {
 }
 
 function jump(to: number) {
-  if (timer.value) return ;
+  if (timer.value) return;
   to %= props.urls.length;
-  if (to === ptr.value) return ;
+  if (to === ptr.value) return;
   ptrOld.value = ptr.value;
   ptr.value = to;
   animate();
@@ -62,13 +65,22 @@ defineExpose({
 onMounted(() => {
   setInterval(() => next(), 2000);
 });
-
 </script>
 
 <template>
   <a href="#" class="w-full h-full relative block">
-    <img class="absolute left-0 top-0 w-full h-full z-10" ref="$img" :src="props.urls[ptr]" alt="new" />
-    <img class="absolute left-0 top-0 w-full h-full z-0" ref="$imgOld" :src="props.urls[ptrOld]" alt="old" />
+    <img
+      class="absolute left-0 top-0 w-full h-full z-10"
+      ref="$img"
+      :src="props.urls[ptr]"
+      alt="new"
+    />
+    <img
+      class="absolute left-0 top-0 w-full h-full z-0"
+      ref="$imgOld"
+      :src="props.urls[ptrOld]"
+      alt="old"
+    />
   </a>
 </template>
 
@@ -83,6 +95,6 @@ onMounted(() => {
 }
 
 .fade {
-  animation: fade .4s;
+  animation: fade 0.4s;
 }
 </style>

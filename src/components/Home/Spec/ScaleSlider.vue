@@ -24,14 +24,14 @@ onMounted(() => {
 
 onUnmounted(() => {
   clearInterval(onTimer.value);
-})
+});
 
 const timer = ref<any>();
 const $slider = ref<HTMLDivElement>();
 const $imgs = ref<HTMLImageElement[]>();
 
 function prev() {
-  if (timer.value) return ;
+  if (timer.value) return;
   try {
     const its = items.value;
     its[2].main = false;
@@ -51,7 +51,7 @@ function prev() {
   }
 }
 function next() {
-  if (timer.value) return ;
+  if (timer.value) return;
   try {
     const its = items.value;
     its[2].main = false;
@@ -80,18 +80,32 @@ defineExpose({
 });
 
 // 270 = 150 + 50 + 50 + 10 + 10
-
 </script>
 
 <template>
   <div ref="$container" class="w-full h-full overflow-hidden pt-10">
     <div ref="$slider" id="slider-scale" class="flex w-[1000px] slider-normal">
-      <a ref="$div" :key="it.id" v-for="(it) of items" class="relative block item-a" href="#">
-        <img ref="$imgs" class="relative bottom-0 img-animate w-[100px] h-[100px] hover:opacity-80" :class="[it.main && 'img-main' || 'mx-[5px]' || '']" :src="it.pic" alt="">
+      <a
+        ref="$div"
+        :key="it.id"
+        v-for="it of items"
+        class="relative block item-a"
+        href="#"
+      >
+        <img
+          ref="$imgs"
+          class="relative bottom-0 img-animate w-[100px] h-[100px] hover:opacity-80"
+          :class="[(it.main && 'img-main') || 'mx-[5px]' || '']"
+          :src="it.pic"
+          alt=""
+        />
         <transition>
           <div v-show="it.main" class="pt-10 text-center relative">
-            <div class="absolute left-2/4 -translate-x-1/2 ">
-              <div id="title" class="whitespace-nowrap text-ellipsis transition hover:text-[#E1251B]">
+            <div class="absolute left-2/4 -translate-x-1/2">
+              <div
+                id="title"
+                class="whitespace-nowrap text-ellipsis transition hover:text-[#E1251B]"
+              >
                 {{ it.title }}
               </div>
               <div class="text-[#E1251B] font-bold">￥{{ it.price }}</div>
@@ -104,13 +118,12 @@ defineExpose({
 </template>
 
 <style lang="scss">
-
 .item:hover {
-  @apply bg-black
+  @apply bg-black;
 }
 
 .img-animate {
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .img-main {
@@ -118,7 +131,7 @@ defineExpose({
 }
 
 .slider-scale-animate {
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .slider-normal {
@@ -136,7 +149,7 @@ defineExpose({
 
 .v-enter-active,
 .v-leave-active {
-  transition: .2s;
+  transition: 0.2s;
 }
 .v-enter-from,
 .v-leave-to {

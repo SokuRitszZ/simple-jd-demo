@@ -5,7 +5,6 @@ import MainGrid from '@/components/Home/MainGrid.vue';
 import MiaoShaGrid from '@/components/Home/MiaoShaGrid.vue';
 import RecommendGrid from '@/components/Home/RecommendGrid.vue';
 import SpecGrid from '@/components/Home/SpecGrid.vue';
-
 </script>
 
 <template>
@@ -20,11 +19,11 @@ import SpecGrid from '@/components/Home/SpecGrid.vue';
     <div class="pt-3 m-auto">
       <SpecGrid />
     </div>
-    <h1 class="text-center my-8 font-bold text-3xl"> -- 频道广场 -- </h1>
+    <h1 class="text-center my-8 font-bold text-3xl">-- 频道广场 --</h1>
     <div class="m-auto">
       <ChannelGrid />
     </div>
-    <h1 class="text-center my-8 font-bold text-3xl"> -- 为你推荐 -- </h1>
+    <h1 class="text-center my-8 font-bold text-3xl">-- 为你推荐 --</h1>
     <div class="m-auto">
       <RecommendGrid />
     </div>
