@@ -8,6 +8,7 @@ import randomPic from '@/utils/randomPic';
 // @ts-ignore
 import faker from 'faker';
 import JoySeek from './Spec/JoySeek.vue';
+import GoodShop from './Spec/GoodShop.vue';
 
 type typeItem = {
   id: number;
@@ -30,7 +31,6 @@ const items = ref<typeItem[]>(
 );
 
 const $sliderScale = ref();
-
 </script>
 
 <template>
@@ -56,7 +56,9 @@ const $sliderScale = ref();
       <Core2Container title="JOY 寻宝">
         <JoySeek />
       </Core2Container>
-      <Core2Container title="逛好店"></Core2Container>
+      <Core2Container title="逛好店">
+        <GoodShop />
+      </Core2Container>
       <Core2Container title="领券中心"></Core2Container>
     </div>
   </div>
