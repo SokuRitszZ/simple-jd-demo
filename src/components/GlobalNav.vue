@@ -5,7 +5,7 @@ import faker from 'faker';
 const options = ['我的京东', '企业采购', '商家服务', '网站导航'];
 
 function getSubOptions() {
-  return new Array((Math.random() * 20) >>> 0)
+  return new Array((Math.random() * 15) >>> 0)
     .fill(0)
     .map(() => faker.lorem.word(4));
 }
@@ -33,7 +33,7 @@ function getSubOptions() {
             <div class="nav-item-label">
               {{ o }}
             </div>
-            <div class="dropdown absolute hidden w-[300px] grid-cols-3">
+            <div class="dropdown absolute hidden w-[300px] grid-cols-3 z-50">
               <span
                 :key="oo"
                 v-for="oo in getSubOptions()"
