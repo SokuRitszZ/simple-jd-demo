@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
 
 type PropsType = {
   urls: string[];
@@ -45,6 +45,12 @@ function jump(to: number) {
   animate();
 }
 
+defineExpose({
+  next,
+  prev,
+  jump,
+});
+
 const timer = ref<any>(null);
 
 function animate() {
@@ -56,14 +62,14 @@ function animate() {
   }, 400);
 }
 
-defineExpose({
-  next,
-  prev,
-  jump,
-});
+const timerCycle = ref<any>();
 
 onMounted(() => {
-  setInterval(() => next(), 2000);
+  timerCycle.value =  setInterval(() => next(), 2000);
+});
+
+onUnmounted(() => {
+  clearInterval(timerCycle.value);
 });
 </script>
 

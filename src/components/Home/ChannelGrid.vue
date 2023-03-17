@@ -23,12 +23,20 @@ const channels: typeChannel[] = [
     id="container"
     class="grid grid-rows-3 grid-cols-4 h-[600px] w-full gap-2"
   >
-    <div class="row-span-2 col-span-1">
-      <img :src="randomPic()" alt="channel" class="w-full h-full" />
-    </div>
-    <div class="row-span-2 col-span-1">
-      <img :src="randomPic()" alt="channel" class="w-full h-full" />
-    </div>
+    <a href="#" class="row-span-2 col-span-1">
+      <img
+        :src="randomPic()"
+        alt="channel"
+        class="w-full h-full hover:opacity-90 transition"
+      />
+    </a>
+    <a href="#" class="row-span-2 col-span-1">
+      <img
+        :src="randomPic()"
+        alt="channel"
+        class="w-full h-full hover:opacity-90 transition"
+      />
+    </a>
     <!-- div*8 -->
     <ChannelBlock
       :key="c.title"
