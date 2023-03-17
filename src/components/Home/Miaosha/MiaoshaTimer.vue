@@ -4,8 +4,10 @@ import { onMounted, onUnmounted, ref } from 'vue';
 
 const timeCurrent = ref<[number, number, number]>([0, 0, 0]);
 
+const tomorrow = +new Date() + 1000 * 60 * 60 * 24;
+
 function getCurrentTime() {
-  let d = +new Date('2023.02.25 00:00:00') - +new Date();
+  let d = tomorrow - +new Date();
   d = (d / 1000) >>> 0;
   const h = (d / 3600) >>> 0;
   d %= 3600;
