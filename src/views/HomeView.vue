@@ -8,6 +8,7 @@ import SpecGrid from '@/components/Home/SpecGrid.vue';
 import throttle from '@/utils/throttle';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import FixSearch from '@/components/Home/Header/FixSearch.vue';
+import ScrollComp from '@/components/ScrollComp.vue';
 
 const scrollTop = ref<number>(0);
 
@@ -28,9 +29,22 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handler);
 });
+
+type typeOption = {
+  title: string;
+  url: string;
+};
+
+const options: typeOption[] = [
+  { title: '京东秒杀', url: '#miaosha' },
+  { title: '特色优选', url: '#special' },
+  { title: '频道优选', url: '#channel' },
+  { title: '为你推荐', url: '#recommend' },
+];
 </script>
 
 <template>
+  <ScrollComp :options="options" />
   <main class="relative w-screen">
     <div
       v-if="shouldShownFixedSearch"
@@ -38,7 +52,11 @@ onUnmounted(() => {
       class="w-screen min-w-[1200px] h-[50px] bg-white border-b-2 border-[#e14514] fixed top-0 left-0 z-50"
     >
       <div class="w-[1200px] h-full m-auto flex justify-between items-center">
-        <div class="w-[100px] h-[30px] bg-white flex justify-center items-center text-[#e14514] text-3xl font-bold">京东</div>
+        <div
+          class="w-[100px] h-[30px] bg-white flex justify-center items-center text-[#e14514] text-3xl font-bold"
+        >
+          京东
+        </div>
         <div class="relative -left-20">
           <FixSearch />
         </div>
@@ -48,17 +66,21 @@ onUnmounted(() => {
     <div class="comp pt-3">
       <MainGrid />
     </div>
-    <div class="comp pt-3">
+    <div id="miaosha" class="comp pt-3">
       <MiaoShaGrid />
     </div>
-    <div class="comp pt-3">
+    <div id="special" class="comp pt-3">
       <SpecGrid />
     </div>
-    <h1 class="text-center my-8 font-bold text-3xl">-- 频道广场 --</h1>
+    <h1 id="channel" class="text-center my-8 font-bold text-3xl">
+      -- 频道广场 --
+    </h1>
     <div class="comp">
       <ChannelGrid />
     </div>
-    <h1 class="text-center my-8 font-bold text-3xl">-- 为你推荐 --</h1>
+    <h1 id="recommend" class="text-center my-8 font-bold text-3xl">
+      -- 为你推荐 --
+    </h1>
     <div class="comp">
       <RecommendGrid />
     </div>

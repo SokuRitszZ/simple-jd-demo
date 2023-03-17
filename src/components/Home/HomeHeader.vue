@@ -4,7 +4,6 @@ import faker from 'faker';
 import FixSearch from './Header/FixSearch.vue';
 const hotWords = new Array(8).fill(0).map(() => faker.name.firstName());
 const navItems = new Array(8).fill(0).map(() => faker.name.firstName());
-
 </script>
 
 <template>
@@ -41,6 +40,4 @@ const navItems = new Array(8).fill(0).map(() => faker.name.firstName());
   </header>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

@@ -29,7 +29,12 @@ function getItems(option: string) {
       <NavBar @change-option="getItems" />
     </div>
     <div class="grid grid-cols-5 gap-2">
-      <a href="#" :key="i" v-for="(it, i) of items" class="bg-white h-[322px] p-5">
+      <a
+        href="#"
+        :key="i"
+        v-for="(it, i) of items"
+        class="bg-white h-[322px] p-5"
+      >
         <img :src="it.pic" alt="item-img" class="w-[160px] h-[200px] m-auto" />
         <div
           class="overflow-hidden text-ellipsis h-[40px] text-sm mt-1 text-[#666666]"

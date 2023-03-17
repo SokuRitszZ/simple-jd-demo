@@ -5,7 +5,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 const timeCurrent = ref<[number, number, number]>([0, 0, 0]);
 
 function getCurrentTime() {
-  let d = +new Date('2023.02.22 00:00:00') - +new Date();
+  let d = +new Date('2023.02.25 00:00:00') - +new Date();
   d = (d / 1000) >>> 0;
   const h = (d / 3600) >>> 0;
   d %= 3600;
@@ -21,10 +21,11 @@ onMounted(() => {
   timer.value = setInterval(() => {
     getCurrentTime();
   }, 1000);
-}),
-  onUnmounted(() => {
-    clearInterval(timer.value);
-  });
+});
+
+onUnmounted(() => {
+  clearInterval(timer.value);
+});
 </script>
 
 <template>
@@ -49,7 +50,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-.timer:not(:last-child):after {
+.timer:not(:last-child)::after {
   content: ':';
   width: 100px;
   height: 100px;

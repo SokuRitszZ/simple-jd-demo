@@ -14,16 +14,14 @@ type PropsType = {
 const props = defineProps<PropsType>();
 const items = ref<typeItems[]>(props.items);
 
-const onTimer = ref<any>();
+const timerCycle = ref<any>();
 
 onMounted(() => {
-  onTimer.value = setInterval(() => {
-    next();
-  }, 4000);
+  timerCycle.value = setInterval(() => next(), 4000);
 });
 
 onUnmounted(() => {
-  clearInterval(onTimer.value);
+  clearInterval(timerCycle.value);
 });
 
 const timer = ref<any>();
@@ -50,6 +48,7 @@ function prev() {
     e;
   }
 }
+
 function next() {
   if (timer.value) return;
   try {
@@ -95,7 +94,7 @@ defineExpose({
         <img
           ref="$imgs"
           class="relative bottom-0 img-animate w-[100px] h-[100px] hover:opacity-80"
-          :class="[(it.main && 'img-main') || 'mx-[5px]' || '']"
+          :class="[(it.main && 'img-main') || 'mx-[5px]']"
           :src="it.pic"
           alt=""
         />

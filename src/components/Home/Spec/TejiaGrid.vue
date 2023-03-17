@@ -26,10 +26,10 @@ const itemSpec = ref<typeItem[]>(
 <template>
   <div id="tejia" class="bg-white p-5 flex flex-col">
     <div class="flex justify-between items-center h-[60px]">
-      <a href="#" class="text-3xl font-bold">
-        每日特价
-      </a>
-      <div class="transition w-[30px] h-[30px] border-2 border-[#C81623] relative -left-40 rounded-full"></div>
+      <a href="#" class="text-3xl font-bold"> 每日特价 </a>
+      <div
+        class="transition w-[30px] h-[30px] border-2 border-[#C81623] relative -left-40 rounded-full"
+      ></div>
       <a href="#" class="border-b-2 border-[#E1251B] text-[#E1251B] leading-5"
         >精选</a
       >
@@ -93,7 +93,7 @@ const itemSpec = ref<typeItem[]>(
   }
 }
 
-a:hover+div {
+a:hover + div {
   @apply bg-[#C81623];
 }
 </style>
